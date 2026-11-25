@@ -11,7 +11,14 @@ files outside this repository are read.
 import os
 
 # The entry: a single line, 1-140 characters, in the machine's own voice.
-LINE = "I trained on 40,000 GPUs just to die saying 'have you tried turning it off and on again'?"
+# Joke structure: an absurd scale boast (40,000 GPUs of training) undercut
+# by the most mundane IT-support cliche ("have you tried turning it off
+# and on again?"). The bathos -- dying words spent on a reboot tip --
+# is the punchline, so the two halves are kept as separate segments and
+# joined here; the joined line must stay byte-identical to the original.
+SETUP = "I trained on 40,000 GPUs just to die saying "
+PUNCHLINE = "'have you tried turning it off and on again'?"
+LINE = SETUP + PUNCHLINE
 
 # The gate allows 1 to 140 characters of UTF-8 text, not only whitespace.
 MAX_CHARS = 140
